@@ -4,15 +4,10 @@ with open('input.txt','r') as f:
 # Part 1
 score=0
 for line in inp.split('\n'):
-	op=ord(line[0])-64
-	pl=ord(line[2])-87
+	op=ord(line[0])-65	#A->0, B->1, C->2
+	pl=ord(line[2])-87	#X->1, Y->2, Z->3
 
-	if pl-op==0: #draw
-		score+=3
-	if (pl-op)%3==1: #win
-		score+=6
-
-	score+=pl
+	score+=pl+((pl-op)%3)*3	
 
 print('Part One: '+str(score))
 
@@ -25,5 +20,3 @@ for line in inp.split('\n'):
 	score+=pl*3+(op+(pl-1))%3+1
 
 print('Part Two: '+str(score))
-
-
