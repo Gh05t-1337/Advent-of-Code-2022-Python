@@ -31,14 +31,12 @@ print(f'Part One: {sorted(inspected)[-2]*sorted(inspected)[-1]}')
 mod=1
 for m in ops:
 	mod*=int(m[2])
-for m in inp:
-	lins=m.split('\n')
-	monkeys+=[[int(i) for i in ''.join(lins[1].split()[2:]).split(',')]]
 
 monkeys=[]
 for m in inp:
 	lins=m.split('\n')
 	monkeys+=[[int(i) for i in ''.join(lins[1].split()[2:]).split(',')]]
+
 inspected=[0]*len(monkeys)
 
 for _ in '*'*10000:
